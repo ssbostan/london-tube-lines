@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
-isort backend
-black backend
+isort backend frontend
+black backend frontend
