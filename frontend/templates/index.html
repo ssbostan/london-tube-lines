@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <title>London Tube Lines</title>
+</head>
+<body>
+    <div id="header" class="container">
+        <div class="row text-center">
+            <img class="underground-logo" src="{{ url_for('static', filename='logo.png') }}">
+        </div>
+        <div class="row text-center">
+                <h1>London Tube Lines</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary filterable">
+                <div class="panel-heading">
+                    <h3 class="panel-title">London Tube Lines</h3>
+                    <div class="pull-right">
+                        <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr class="filters">
+                            <th><input type="text" class="form-control" placeholder="Line Name" disabled></th>
+                            <th><input type="text" class="form-control" placeholder="Start Station" disabled></th>
+                            <th><input type="text" class="form-control" placeholder="Final Station" disabled></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+{% if data %}
+{% for item in data %}
+                        <tr class="color-{{ item.line_color }}">
+                            <td>{{ item.line_name }}</td>
+                            <td>{{ item.start_station }}</td>
+                            <td>{{ item.final_station }}</td>
+                        </tr>
+{% endfor %}
+{% else %}
+                        <tr class="no-result text-center"><td colspan="3">It seems the backend service is down.</td></tr>
+{% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="container">
+        <div class="row text-center">
+            <a href="https://github.com/ssbostan/london-tube-lines">GitHub</a>
+        </div>
+        <div class="row text-center">
+            <a href="mailto:ssbostan@yahoo.com">Copyright &copy; 2022 Saeid Bostandoust</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='filter.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+.filterable {
+    margin-top: 15px;
+}
+
+.filterable .panel-heading .pull-right {
+    margin-top: -20px;
+}
+
+.filterable .filters input[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: #333;
+}
+
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: #333;
+}
+
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: #333;
+}
+
+.underground-logo {
+    width: 200px;
+}
+
+#header {
+    margin-top: 10px;
+}
+
+#footer {
+    position: absolute;
+    width: 100%;
+    bottom: 1%;
+}
+
+.color-brown {
+    background: #B36305;
+}
+
+.color-red {
+    background: #E32017;
+}
+
+.color-yellow {
+    background: #FFD300;
+}
+
+.color-green {
+    background: #00782A;
+}
+
+.color-pink {
+    background: #F3A9BB;
+}
+
+.color-grey {
+    background: #A0A5A9;
+}
+
+.color-magenta {
+    background: #9B0056;
+}
+
+.color-black {
+    background: #000;
+    color: #FFF;
+}
+
+.color-dark-blue {
+    background: #003688;
+    color: #FFF;
+}
+
+.color-blue {
+    background: #0098D4;
+}
+
+.color-turquoise {
+    background: #95CDBA;
+}
+
+.color-purple {
+    background: #9364CD;
+}
