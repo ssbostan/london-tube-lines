@@ -1,0 +1,68 @@
+[
+    {
+        "line_name": "Bakerloo Line",
+        "start_station": "Harrow & Wealdstone",
+        "final_station": "Elephant & Castle",
+        "line_color": "brown"
+    },
+    {
+        "line_name": "Central Line",
+        "start_station": "West Ruislip",
+        "final_station": "Epping",
+        "line_color": "red"
+    },
+    {
+        "line_name": "Circle Line",
+        "start_station": "Hammersmith",
+        "final_station": "Edgware",
+        "line_color": "yellow"
+    },
+    {
+        "line_name": "District Line",
+        "start_station": "Upminster",
+        "final_station": "Richmond",
+        "line_color": "green"
+    },
+    {
+        "line_name": "Hammersmith & City Line",
+        "start_station": "Hammersmith",
+        "final_station": "Barking",
+        "line_color": "pink"
+    },
+    {
+        "line_name": "Jubilee Line",
+        "start_station": "Stanmore",
+        "final_station": "Stratford",
+        "line_color": "grey"
+    },
+    {
+        "line_name": "Metropolitan Line",
+        "start_station": "Aldgate",
+        "final_station": "Amersham",
+        "line_color": "magenta"
+    },
+    {
+        "line_name": "Northern Line",
+        "start_station": "Edgware",
+        "final_station": "South Wimbledon",
+        "line_color": "black"
+    },
+    {
+        "line_name": "Piccadilly Line",
+        "start_station": "Cockfosters",
+        "final_station": "Heathrow Airport",
+        "line_color": "dark-blue"
+    },
+    {
+        "line_name": "Victoria Line",
+        "start_station": "Walthamstow Central",
+        "final_station": "Brixton",
+        "line_color": "blue"
+    },
+    {
+        "line_name": "Waterloo & City Line",
+        "start_station": "Bank",
+        "final_station": "Waterloo",
+        "line_color": "turquoise"
+    }
+]

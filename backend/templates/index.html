@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>London Tube Lines</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="header">
+            <h1>London Tube Lines - API Server</h1>
+        </div>
+        <div id="endpoints">
+            <h2>Endpoints:</h2>
+            <h3><a href="{{ url_for('lines') }}">/lines</a></h3>
+        </div>
+        <div id="footer">
+            <h5><a href="https://github.com/ssbostan/london-tube-lines">GitHub</a></h5>
+            <h5>Copyright &copy; 2022 Saeid Bostandoust</h5>
+        </div>
+    </body>
+</html>
