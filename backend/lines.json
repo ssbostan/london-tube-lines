@@ -64,5 +64,11 @@
         "start_station": "Bank",
         "final_station": "Waterloo",
         "line_color": "turquoise"
+    },
+    {
+        "line_name": "Elizabeth Line",
+        "start_station": "Reading",
+        "final_station": "Shenfield",
+        "line_color": "purple"
     }
 ]
