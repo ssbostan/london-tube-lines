@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-{{ .Release.Name }}-backend
+  labels:
+    app.kubernetes.io/name: london-tube-lines-backend
+    app.kubernetes.io/part-of: london-tube-lines
+    app.kubernetes.io/created-by: ssbostan
+spec:
+  replicas: {{ .Values.backend.replicas }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: london-tube-lines-backend
+      app.kubernetes.io/part-of: london-tube-lines
+      app.kubernetes.io/created-by: ssbostan
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: london-tube-lines-backend
+        app.kubernetes.io/part-of: london-tube-lines
+        app.kubernetes.io/created-by: ssbostan
+    spec:
+      containers:
+        - name: backend
+          image: {{ .Values.backend.imageName }}
+          ports:
+            - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-{{ .Release.Name }}-frontend
+  labels:
+    app.kubernetes.io/name: london-tube-lines-frontend
+    app.kubernetes.io/part-of: london-tube-lines
+    app.kubernetes.io/created-by: ssbostan
+spec:
+  replicas: {{ .Values.frontend.replicas }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: london-tube-lines-frontend
+      app.kubernetes.io/part-of: london-tube-lines
+      app.kubernetes.io/created-by: ssbostan
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: london-tube-lines-frontend
+        app.kubernetes.io/part-of: london-tube-lines
+        app.kubernetes.io/created-by: ssbostan
+    spec:
+      containers:
+        - name: frontend
+          image: {{ .Values.frontend.imageName }}
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: {{ .Chart.Name }}-{{ .Release.Name }}-frontend-config

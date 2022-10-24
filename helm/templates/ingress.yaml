@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Chart.Name }}-{{ .Release.Name }}-frontend
+  labels:
+    app.kubernetes.io/name: london-tube-lines-frontend
+    app.kubernetes.io/part-of: london-tube-lines
+    app.kubernetes.io/created-by: ssbostan
+spec:
+  rules:
+    - host: {{ .Values.frontend.ingressHostAddress }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Chart.Name }}-{{ .Release.Name }}-frontend
+                port:
+                  number: 80

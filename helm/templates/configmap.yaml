@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-{{ .Release.Name }}-frontend-config
+  labels:
+    app.kubernetes.io/name: london-tube-lines-frontend
+    app.kubernetes.io/part-of: london-tube-lines
+    app.kubernetes.io/created-by: ssbostan
+data:
+  LONDON_TUBE_LINES_BACKEND_HOST_ADDR: http://{{ .Chart.Name }}-{{ .Release.Name }}-backend

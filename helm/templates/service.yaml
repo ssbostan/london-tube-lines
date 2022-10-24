@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-{{ .Release.Name }}-backend
+  labels:
+    app.kubernetes.io/name: london-tube-lines-backend
+    app.kubernetes.io/part-of: london-tube-lines
+    app.kubernetes.io/created-by: ssbostan
+spec:
+  type: {{ .Values.backend.serviceType }}
+  selector:
+    app.kubernetes.io/name: london-tube-lines-backend
+    app.kubernetes.io/part-of: london-tube-lines
+    app.kubernetes.io/created-by: ssbostan
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-{{ .Release.Name }}-frontend
+  labels:
+    app.kubernetes.io/name: london-tube-lines-frontend
+    app.kubernetes.io/part-of: london-tube-lines
+    app.kubernetes.io/created-by: ssbostan
+spec:
+  type: {{ .Values.frontend.serviceType }}
+  selector:
+    app.kubernetes.io/name: london-tube-lines-frontend
+    app.kubernetes.io/part-of: london-tube-lines
+    app.kubernetes.io/created-by: ssbostan
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
