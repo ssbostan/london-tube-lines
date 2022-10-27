@@ -7,8 +7,11 @@ metadata:
     app.kubernetes.io/part-of: london-tube-lines
     app.kubernetes.io/created-by: ssbostan
 spec:
+{{- if .Values.frontend.ingress.className }}
+  ingressClassName: {{ .Values.frontend.ingress.className }}
+{{- end }}
   rules:
-    - host: {{ .Values.frontend.ingressHostAddress }}
+    - host: {{ .Values.frontend.ingress.hostAddress }}
       http:
         paths:
           - path: /

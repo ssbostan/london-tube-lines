@@ -1,10 +1,16 @@
 backend:
-  serviceType: ClusterIP
-  imageName: ssbostan/london-tube-lines-backend:latest
-  replicas: 2
+  deployment:
+    imageName: ssbostan/london-tube-lines-backend:latest
+    replicas: 2
+  service:
+    type: ClusterIP
 
 frontend:
-  serviceType: ClusterIP
-  ingressHostAddress: london-tube-lines.b9tcluster.local
-  imageName: ssbostan/london-tube-lines-frontend:latest
-  replicas: 2
+  deployment:
+    imageName: ssbostan/london-tube-lines-frontend:latest
+    replicas: 2
+  service:
+    type: ClusterIP
+  ingress:
+    hostAddress: london-tube-lines.b9tcluster.local
+    className: false

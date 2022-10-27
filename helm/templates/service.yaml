@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/part-of: london-tube-lines
     app.kubernetes.io/created-by: ssbostan
 spec:
-  type: {{ .Values.backend.serviceType }}
+  type: {{ .Values.backend.service.type }}
   selector:
     app.kubernetes.io/name: london-tube-lines-backend
     app.kubernetes.io/part-of: london-tube-lines
@@ -26,7 +26,7 @@ metadata:
     app.kubernetes.io/part-of: london-tube-lines
     app.kubernetes.io/created-by: ssbostan
 spec:
-  type: {{ .Values.frontend.serviceType }}
+  type: {{ .Values.frontend.service.type }}
   selector:
     app.kubernetes.io/name: london-tube-lines-frontend
     app.kubernetes.io/part-of: london-tube-lines
