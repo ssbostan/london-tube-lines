@@ -32,13 +32,12 @@
 }
 
 #header {
-    margin-top: 1%;
+    margin-top: 20px;
 }
 
 #footer {
-    position: absolute;
     width: 100%;
-    bottom: 1%;
+    margin: 10px 0;
 }
 
 .color-brown {
